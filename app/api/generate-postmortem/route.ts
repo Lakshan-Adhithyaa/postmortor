@@ -12,7 +12,7 @@ export async function POST() {
     request_id: crypto.randomUUID(),
     latency_ms: Date.now() - start,
     token_usage: 950,
-    model_name: "gemini-1.5-flash",
+    model_name: "gemini-2.0-flash",
     error: false,
     mode: "simulated"
   };
