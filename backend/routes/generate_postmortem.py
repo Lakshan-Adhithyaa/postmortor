@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from backend.services.postmortem_service import generate_postmortem
-from backend.utils.logger import log_event
+from services.postmortem_service import generate_postmortem
+from utils.logger import log_event
 
 router = APIRouter()
 
