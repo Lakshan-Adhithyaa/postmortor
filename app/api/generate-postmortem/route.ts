@@ -1,14 +1,11 @@
 import { NextResponse } from "next/server";
-
 import { LLMLog } from "@/lib/logSchema";
 
 export async function POST() {
   const start = Date.now();
 
-<<<<<<< HEAD
-=======
   // 1. DEFINE MISSING VARIABLES (Mock Data for Simulation)
-  const model_name = "gemini-2105-flas-liteh";
+  const model_name = "gemini-2.5-flash-lite";
   const messages = [{ role: "user", content: "This is a test trigger for Datadog." }];
   const aiText = "This is a simulated AI response.";
   const usage = { prompt: 120, completion: 80, total: 200 };
@@ -74,26 +71,3 @@ export async function POST() {
 
   return NextResponse.json({ ok: true });
 }
->>>>>>> cf11c97c4e6cb64b0067914311fba9b4f82d234c
-  // simulate LLM work
-  await new Promise(r => setTimeout(r, 1200));
-
-  const log: LLMLog = {
-    incident_id: "inc_demo",
-    request_id: crypto.randomUUID(),
-    latency_ms: Date.now() - start,
-    token_usage: 950,
-    model_name: "gemini-2.0-flash",
-    error: false,
-    mode: "simulated"
-  };
-
-  // 👇 THIS is the important part
-  console.log(JSON.stringify(log));
-
-  return NextResponse.json({ ok: true });
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> cf11c97c4e6cb64b0067914311fba9b4f82d234c

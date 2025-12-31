@@ -1,5 +1,9 @@
 "use client";
 
+<<<<<<< HEAD
+=======
+import Header from "@/components/Header";
+>>>>>>> upstream/develop
 import Navbar from "@/components/Navbar";
 import GenerateButton from "@/components/ui/GenerateButton";
 
@@ -12,10 +16,13 @@ async function generate() {
 export default function Home() {
   return (
     <div className="min-h-screen bg-white flex flex-col">
+<<<<<<< HEAD
       {/* Navbar included from Phase 2 */}
       <Navbar />
 
       {/* Main Layout Structure */}
+=======
+>>>>>>> upstream/develop
       <div className="flex-1 flex flex-col items-center justify-center gap-5">
         <div className="gap-2.5">
           <h1 className="font-extrabold text-center text-[72px]">
@@ -26,6 +33,7 @@ export default function Home() {
             systems
           </p>
         </div>
+<<<<<<< HEAD
 
         <div className="flex flex-col gap-1.25">
           {/* Connected the 'generate' function from Phase 2 
@@ -36,6 +44,13 @@ export default function Home() {
             variant="string"
             icon
             onClick={generate} 
+=======
+        <div className="flex flex-col gap-1.25">
+          <GenerateButton
+            text="Simulate Incident"
+            variant="string"
+            icon
+>>>>>>> upstream/develop
           />
           <p className="text-sm text-muted-foreground">
             A new incident and postmortem will be generated for demonstration

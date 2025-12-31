@@ -1,8 +1,8 @@
 import json
-from services.prompt_builder import build_prompt
-from services.gemini_client import call_gemini
-from utils.json_validator import is_valid_postmortem
-from mock.simulated_postmortem import SIMULATED_POSTMORTEM
+from backend.services.prompt_builder import build_prompt
+from backend.services.gemini_client import call_gemini
+from backend.utils.json_validator import is_valid_postmortem
+from backend.mock.simulated_postmortem import SIMULATED_POSTMORTEM
 
 
 async def generate_postmortem(data: dict) -> dict:
