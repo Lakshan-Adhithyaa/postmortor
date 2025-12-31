@@ -5,7 +5,7 @@ export async function POST() {
   const start = Date.now();
 
   // 1. DEFINE MISSING VARIABLES (Mock Data for Simulation)
-  const model_name = "gemini-1.5-flash";
+  const model_name = "gemini-2105-flas-liteh";
   const messages = [{ role: "user", content: "This is a test trigger for Datadog." }];
   const aiText = "This is a simulated AI response.";
   const usage = { prompt: 120, completion: 80, total: 200 };
@@ -35,6 +35,13 @@ export async function POST() {
 
     status: "success",
     is_error: false,
+
+    
+    token_usage: 950,
+   
+    error: false,
+    mode: "simulated"
+
   };
 
   console.log("API key length:", process.env.DATADOG_API_KEY?.length);
