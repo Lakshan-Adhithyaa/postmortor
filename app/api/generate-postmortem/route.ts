@@ -1,5 +1,9 @@
 import { NextResponse } from "next/server";
+<<<<<<< HEAD
+// import { LLMLog } from "@/lib/logSchema"; // Keep this if you have the interface defined
+=======
 import { LLMLog } from "@/lib/logSchema";
+>>>>>>> upstream/develop
 
 export async function POST() {
   const start = Date.now();
