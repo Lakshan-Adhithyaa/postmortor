@@ -44,7 +44,7 @@ const HistoryPage = () => {
 
   return (
     <main>
-      <Navbar />
+      <Navbar showBreadcrumb={false}/>
       <section className="min-h-screen max-w-266 mx-auto flex flex-col gap-10 mt-23.5">
         <div className="text-center">
           <h1 className="text-[36px] font-bold">Incident History</h1>

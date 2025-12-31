@@ -1,34 +1,53 @@
+<<<<<<< HEAD
+"use client";
+
+import React from "react";
+import { Button } from "./button";
+
+type Props = {
+  onGenerate: () => void;
+};
+
+const GenerateButton = ({ onGenerate }: Props) => {
+  return (
+    <div className="text-center">
+      <Button
+        className="bg-[#564787] rounded-[10px] text-white items-center"
+        size="lg"
+        onClick={onGenerate}
+      >
+        Generate postmortem
+      </Button>
+
+      <div className="flex flex-row gap-2 mt-2 items-center">
+        <span className="text-muted-foreground text-sm">
+          Uses logs and metrics to generate a structured postmortem.
+        </span>
+      </div>
+=======
 'use client'
 
 import React from 'react'
 import { Button } from './button'
 
 interface ButtonType {
-  variant?: string | "default";
-  icon?: React.ReactNode;
-  text?: string;
-  onClick?: () => void;
-  // Included to support your branch's specific naming if preferred, 
-  // but mapped to onClick below
-  onGenerate?: () => void; 
+  variant ?: string | "default";
+  icon ?: React.ReactNode;
+  text ?: string;
+  onClick ?: () => void;
 }
 
-const GenerateButton = ({ variant, icon, text, onClick, onGenerate }: ButtonType) => {
-  // Logic to handle both prop names for the same action
-  const handleClick = onClick || onGenerate;
-
+const GenerateButton = ({variant, icon, text, onClick}: ButtonType)  => {
   const isWhiteBg = variant === "whitebg";
-  
   const buttonClass = isWhiteBg
     ? "bg-white border-2 border-[#564787] text-[#564787] rounded-[10px] items-center hover:bg-white hover:cursor-pointer"
     : "bg-[#564787] font-medium text-white rounded-[10px] items-center hover:bg-[#564787E5] hover:cursor-pointer";
-    
   const svgFill = isWhiteBg ? "#564787" : "white";
   const textClass = isWhiteBg ? "text-[#564787]" : "text-white";
 
   return (
     <div className="text-center">
-      <Button className={buttonClass} size="lg" onClick={handleClick}>
+      <Button className={buttonClass} size="lg" onClick={onClick}>
         {icon ? icon : (
           <svg
             width="18"
@@ -51,6 +70,7 @@ const GenerateButton = ({ variant, icon, text, onClick, onGenerate }: ButtonType
         )}
         <span className={textClass}>{text}</span>
       </Button>
+>>>>>>> upstream/develop
     </div>
   );
 };

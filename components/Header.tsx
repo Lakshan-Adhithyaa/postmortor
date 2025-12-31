@@ -74,7 +74,11 @@ const Header = ({ id, incident, onGenerate }: HeaderProps) => {
         ))}
       </div>
 
+<<<<<<< HEAD
       {/* Generate Action Area */}
+=======
+     <GenerateButton onGenerate={onGenerate} />
+>>>>>>> cf11c97c4e6cb64b0067914311fba9b4f82d234c
       <div className="flex flex-col gap-2 mt-2 items-center">
         <GenerateButton 
           text="Generate postmortem" 
