@@ -1,12 +1,10 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/develop
 "use client";
 import React from 'react'
 import KpiGrid from "@/components/ui/kpigrid";
 import GenerateButton from '@/components/ui/GenerateButton'
 import { Badge } from '@/components/ui/badge';
+
 
 const kpiData = [
   {
@@ -45,13 +43,11 @@ type Props = {
 interface HeaderProps {
   id: string;
   incident: string;
-  onGenerate: () => void;
 }
 
-const Header = ({ id, incident, onGenerate }: HeaderProps) => {
+const Header = ({ id, incident }: HeaderProps) => {
   return (
     <div className="flex flex-col items-center gap-3">
-      {/* Incident ID and Status Badges */}
       <div className="flex flex-row items-center gap-2">
         <Badge
           variant="outline"
@@ -63,34 +59,23 @@ const Header = ({ id, incident, onGenerate }: HeaderProps) => {
         </Badge>
       </div>
 
-      {/* Title and Description */}
       <div className="w-full max-w-137.5 flex flex-col text-center gap-2">
         <h1 className="text-5xl lg:text-3xl font-bold text-black">
           Elevated response times detected in LLM request handling
         </h1>
-        <p className="text-muted-foreground">
+        <p className="">
           Automated alerts indicate a deviation in p99 latency & detected
           abnormal latency patterns across the inference cluster.
         </p>
       </div>
-
-      {/* KPI Metrics Grid */}
       <div className="flex flex-row mt-5 mb-5 gap-4">
         {kpiData.map((kpi) => (
           <KpiGrid key={kpi.heading} {...kpi} />
         ))}
       </div>
 
-<<<<<<< HEAD
-      {/* Generate Action Area */}
-=======
-     <GenerateButton onGenerate={onGenerate} />
->>>>>>> cf11c97c4e6cb64b0067914311fba9b4f82d234c
       <div className="flex flex-col gap-2 mt-2 items-center">
-        <GenerateButton 
-          text="Generate postmortem" 
-          onGenerate={onGenerate} 
-        />
+        <GenerateButton text="Generate postmortem" />
         <div className='flex flex-row gap-2.5 items-center'>
           <svg
             width="15"

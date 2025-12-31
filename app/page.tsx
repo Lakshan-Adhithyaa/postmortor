@@ -1,63 +1,23 @@
-"use client";
+import Navbar from '@/components/Navbar'
+import IncidentBody from '@/components/report/IncidentBody'
+import IncidentHeader from '@/components/report/IncidentHeader'
+import React from 'react'
 
-<<<<<<< HEAD
-=======
-import Header from "@/components/Header";
->>>>>>> upstream/develop
-import Navbar from "@/components/Navbar";
-import GenerateButton from "@/components/ui/GenerateButton";
-
-async function generate() {
-  await fetch("/api/generate-postmortem", {
-    method: "POST",
-  });
-}
-
-export default function Home() {
+const ReportPage = () => {
   return (
-    <div className="min-h-screen bg-white flex flex-col">
-<<<<<<< HEAD
-      {/* Navbar included from Phase 2 */}
+    <main>
       <Navbar />
-
-      {/* Main Layout Structure */}
-=======
->>>>>>> upstream/develop
-      <div className="flex-1 flex flex-col items-center justify-center gap-5">
-        <div className="gap-2.5">
-          <h1 className="font-extrabold text-center text-[72px]">
-            AI Incident Postmortem generator
-          </h1>
-          <p className="text-center text-muted-foreground">
-            Generate clear, structured postmortems for incidents in LLM-powered
-            systems
-          </p>
-        </div>
-<<<<<<< HEAD
-
-        <div className="flex flex-col gap-1.25">
-          {/* Connected the 'generate' function from Phase 2 
-            to the 'GenerateButton' from Main 
-          */}
-          <GenerateButton
-            text="View generated postmortem"
-            variant="string"
-            icon
-            onClick={generate} 
-=======
-        <div className="flex flex-col gap-1.25">
-          <GenerateButton
-            text="Simulate Incident"
-            variant="string"
-            icon
->>>>>>> upstream/develop
-          />
-          <p className="text-sm text-muted-foreground">
-            A new incident and postmortem will be generated for demonstration
-            purposes.
-          </p>
-        </div>
+      <div className="min-h-screen max-w-212 mx-auto flex flex-col gap-25 mt-15">
+        <IncidentHeader
+          id="042"
+          incident="Latency Spike in Inference Engine"
+          date='Aug 23, 2025'
+          duration='20m'
+        />
+        <IncidentBody isNoObservability={false} isAIUnavailable={false}/>
       </div>
-    </div>
+    </main>
   );
 }
+
+export default ReportPage
